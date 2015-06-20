@@ -1,10 +1,14 @@
 # Peer_Assessments_GettingCleanningData
 
-The code book is on file codebook.md
+##The code book is on file codebook.md
 
-The results are stored in the files:
+##The results are stored in the files:
+
 -merged_data.txt
+
 -data_with_means.txt 
+
+
 
 Please, follow the instruction bellow to execute run_analysis.R
 
