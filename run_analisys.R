@@ -80,10 +80,11 @@ for(i in 1:QtdSubject) {
     subconj<-Data_set[Data_set$ActivityID==j & Data_set$Subject==i,]
     resultInt<-apply(subconj[,1:66],2,mean)
     resultInt<-as.data.frame(matrix(resultInt,1,byrow=TRUE))
-    resultInt$ActivityID<-j
     resultInt$Subject<-i
+    resultInt$ActivityID<-j    
+    resultInt$activityName<-activity[resultInt$ActivityID,2]    
     if (is.null(dim(result))) {result<-resultInt} else {result<-rbind(result,resultInt)}
   }
 }
-names(result)<-c(features_mean_std$FriendlyName,"ActivityID","Subject")
-write.table(result, "data_with_means.txt")
+names(result)<-c(features_mean_std$FriendlyName,"Subject","ActivityID","Activity")
+write.table(result, "data_with_means.txt",row.name=FALSE)
